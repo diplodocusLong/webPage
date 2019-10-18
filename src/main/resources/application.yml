@@ -1,0 +1,28 @@
+
+server:
+  serverlet:
+    context-path: /webpage
+spring:
+  profiles:
+    active: dev
+  datasource:
+    #driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://58.87.88.74:3306/gps_website?characterEncoding=utf8&useSSL=false
+    username: root
+    password: Zhuoyuew@killhacker*94@
+#mybatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations:  classpath:/mapper/*Mapper.xml,classpath:/com/bohui/wf/gps/website.webpage/mapper/**/*Mapper.xml
+  type-aliases-package: com.bohui.wf.gps.website.webpage.entity
+---
+spring:
+  profile: dev
+server:
+  port: 9001
+  servlet:
+    context-path: /webpage-manager
+
+

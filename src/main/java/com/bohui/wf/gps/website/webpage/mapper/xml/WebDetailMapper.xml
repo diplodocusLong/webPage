@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohui.wf.gps.website.webpage.mapper.WebDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bohui.wf.gps.website.webpage.entity.WebDetail">
+        <id column="detail_id" property="detailId" />
+        <result column="page_id" property="pageId" />
+        <result column="detail_title" property="detailTitle" />
+        <result column="detail_subtitle" property="detailSubtitle" />
+        <result column="detail_image1" property="detailImage1" />
+        <result column="detail_image2" property="detailImage2" />
+        <result column="detail_image3" property="detailImage3" />
+        <result column="detail_content" property="detailContent" />
+        <result column="detail_link" property="detailLink" />
+        <result column="detail_level" property="detailLevel" />
+        <result column="detail_status" property="detailStatus" />
+        <result column="detail_remark" property="detailRemark" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        detail_id, page_id, detail_title, detail_subtitle, detail_image1, detail_image2, detail_image3, detail_content, detail_link, detail_level, detail_status, detail_remark, create_time, update_time
+    </sql>
+
+</mapper>
