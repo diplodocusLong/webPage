@@ -2,8 +2,8 @@ package com.bohui.wf.gps.website.webpage.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,23 +22,26 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="SysUser对象", description="")
-public class SysUser extends Model<SysUser> {
+@ApiModel(value="WebIndex对象", description="")
+public class WebIndex extends Model<WebIndex> {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "用户ID")
-    @TableId(value = "user_id", type = IdType.AUTO)
-    private Integer userId;
+    @ApiModelProperty(value = "页面id")
+    @TableId(value = "index_id", type = IdType.AUTO)
+    private Integer indexId;
 
-    @ApiModelProperty(value = "用户名")
-    private String userName;
+    @ApiModelProperty(value = "内容")
+    private String indexContent;
 
-    @ApiModelProperty(value = "用户密码")
-    private String userPassword;
+    @ApiModelProperty(value = "链接")
+    private String indexLink;
 
-    @ApiModelProperty(value = "用户状态，1为启用")
-    private Integer userStatus;
+    @ApiModelProperty(value = "状态，1为启用")
+    private Integer indexStatus;
+
+    @ApiModelProperty(value = "备注")
+    private String indexRemark;
 
     @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;
@@ -49,7 +52,7 @@ public class SysUser extends Model<SysUser> {
 
     @Override
     protected Serializable pkVal() {
-        return this.userId;
+        return this.indexId;
     }
 
 }

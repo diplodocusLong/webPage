@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author lianglong
- * @since 2019-10-10
+ * @since 2019-10-21
  */
 public interface SysLogService extends IService<SysLog> {
 

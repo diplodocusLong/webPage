@@ -1,5 +1,6 @@
 package com.bohui.wf.gps.website.webpage.service;
 
+import com.bohui.wf.gps.website.webpage.entity.Result;
 import com.bohui.wf.gps.website.webpage.entity.WebPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -11,9 +12,15 @@ import java.util.List;
  * </p>
  *
  * @author lianglong
- * @since 2019-10-10
+ * @since 2019-10-21
  */
 public interface WebPageService extends IService<WebPage> {
 
-    List<WebPage> fondPage();
+    List<WebPage> fondPage(Integer id);
+
+    Result updateSite(Integer id);
+
+    WebPage getNavigation();
+
+    List<WebPage> listPage(Integer id);
 }

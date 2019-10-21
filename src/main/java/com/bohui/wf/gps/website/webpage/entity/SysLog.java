@@ -1,8 +1,6 @@
 package com.bohui.wf.gps.website.webpage.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -19,7 +17,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author lianglong
- * @since 2019-10-10
+ * @since 2019-10-21
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -40,15 +38,12 @@ public class SysLog extends Model<SysLog> {
     private String logContent;
 
     @ApiModelProperty(value = "操作人")
-    @TableField
     private Integer logUserid;
 
     @ApiModelProperty(value = "创建时间")
-    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @ApiModelProperty(value = "修改时间")
-    @TableField(fill= FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
 

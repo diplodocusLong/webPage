@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author lianglong
- * @since 2019-10-10
+ * @since 2019-10-21
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -32,6 +32,9 @@ public class WebPage extends Model<WebPage> {
     @ApiModelProperty(value = "序号")
     @TableId(value = "page_id", type = IdType.AUTO)
     private Integer pageId;
+
+    @ApiModelProperty(value = "页面id")
+    private Integer indexId;
 
     @ApiModelProperty(value = "类型(英文code)")
     private String pageType;

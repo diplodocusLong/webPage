@@ -22,6 +22,7 @@ public class GlobalExceptionHandler {
     public Result defaultErrorHandler(Exception ex){
 
         log.info(ex.getMessage());
+        ex.printStackTrace();
 
 
        return Result.ERROR(ResultDes.ERROE).setData(ex.getMessage());

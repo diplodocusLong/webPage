@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.bohui.wf.gps.website.webpage.entity.WebPage">
         <id column="page_id" property="pageId" />
+        <result column="index_id" property="indexId" />
         <result column="page_type" property="pageType" />
         <result column="page_title" property="pageTitle" />
         <result column="page_level" property="pageLevel" />
@@ -16,6 +17,12 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        page_id, page_type, page_title, page_level, page_remark, page_status, create_time, update_time
+        page_id, index_id, page_type, page_title, page_level, page_remark, page_status, create_time, update_time
     </sql>
+    <select id="selectAll" resultType="com.bohui.wf.gps.website.webpage.entity.WebPage">
+        select <include refid="Base_Column_List"></include>
+        from web_page
+        where index_id = #{id}
+    </select>
+
 </mapper>

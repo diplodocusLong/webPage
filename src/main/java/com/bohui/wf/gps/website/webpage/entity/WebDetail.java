@@ -1,8 +1,8 @@
 package com.bohui.wf.gps.website.webpage.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -17,7 +17,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author lianglong
- * @since 2019-10-10
+ * @since 2019-10-21
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -59,15 +59,18 @@ public class WebDetail extends Model<WebDetail> {
     private Integer detailLevel;
 
     @ApiModelProperty(value = "状态，1为启用")
+    @TableLogic(value = "1",delval = "0")
     private Integer detailStatus;
 
     @ApiModelProperty(value = "备注")
     private String detailRemark;
 
     @ApiModelProperty(value = "创建时间")
+    @TableField(fill= FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @ApiModelProperty(value = "修改时间")
+    @TableField(fill= FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
 

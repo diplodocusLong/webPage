@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author lianglong
- * @since 2019-10-10
+ * @since 2019-10-21
  */
 @Service
 public class WebDetailServiceImpl extends ServiceImpl<WebDetailMapper, WebDetail> implements WebDetailService {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohui.wf.gps.website.webpage.mapper.WebIndexMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bohui.wf.gps.website.webpage.entity.WebIndex">
+        <id column="index_id" property="indexId" />
+        <result column="index_content" property="indexContent" />
+        <result column="index_link" property="indexLink" />
+        <result column="index_status" property="indexStatus" />
+        <result column="index_remark" property="indexRemark" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        index_id, index_content, index_link, index_status, index_remark, create_time, update_time
+    </sql>
+
+</mapper>

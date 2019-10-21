@@ -1,7 +1,9 @@
 package com.bohui.wf.gps.website.webpage.service;
 
-import com.bohui.wf.gps.website.webpage.entity.SysUser;
+import com.bohui.wf.gps.website.webpage.entity.WebIndex;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lianglong
  * @since 2019-10-21
  */
-public interface SysUserService extends IService<SysUser> {
+public interface WebIndexService extends IService<WebIndex> {
 
+    List<WebIndex> listPages();
 }
