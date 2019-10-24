@@ -33,7 +33,7 @@ public class AutoGeneratorHelper {
                 // 全局配置
                 new GlobalConfig()
                         .setOutputDir("/home/nevermore/文档/web-page/src/main/java")//输出目录
-                        .setFileOverride(true)// 是否覆盖文件
+                        .setFileOverride(false)// 是否覆盖文件
                         .setActiveRecord(true)// 开启 activeRecord 模式
                         .setEnableCache(false)// XML 二级缓存
                         .setBaseResultMap(true)// XML ResultMap

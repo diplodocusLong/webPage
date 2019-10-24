@@ -59,7 +59,7 @@ public class WebDetail extends Model<WebDetail> {
     private Integer detailLevel;
 
     @ApiModelProperty(value = "状态，1为启用")
-    @TableLogic(value = "1",delval = "0")
+//    @TableLogic(value = "1",delval = "0")
     private Integer detailStatus;
 
     @ApiModelProperty(value = "备注")

@@ -35,12 +35,13 @@ public class WebPageServiceImpl extends ServiceImpl<WebPageMapper, WebPage> impl
     @Override
     @Transactional(readOnly = true)
     public List<WebPage> fondPage(Integer id) {
-        List<WebPage> webPages = webPageMapper.selectList(new QueryWrapper<WebPage>().eq("index_id",id));
+        List<WebPage> webPages = webPageMapper.selectList(new QueryWrapper<WebPage>().eq("index_id",id).eq("page_status",1));
 
 
         for (WebPage webPage : webPages) {
 
-            List<WebDetail> webDetails = webDetailMapper.selectList(new QueryWrapper<WebDetail>().eq("page_id", webPage.getPageId()));
+            List<WebDetail> webDetails = webDetailMapper.selectList(
+                    new QueryWrapper<WebDetail>().eq("page_id", webPage.getPageId()).eq("page_status",1));
 
             webPage.setWebDetails(webDetails);
         }
@@ -72,18 +73,44 @@ public class WebPageServiceImpl extends ServiceImpl<WebPageMapper, WebPage> impl
 
         List<WebPage> webPages = webPageMapper.selectAll(id);
 
+        if(id==1){
 
-        for (WebPage webPage : webPages) {
+            WebPage webPage = webPageMapper.selectById(1);
+
+            webPages.add(webPage);
+
+        }
+
+
+/*        for (WebPage webPage : webPages) {
 
             List<WebDetail> webDetails = webDetailMapper.selectAll(id);
 
             webPage.setWebDetails(webDetails);
-        }
+        }*/
         return webPages;
 
 
 
 
+    }
+
+    @Override
+    @Transactional
+    public WebPage updateWebpage(WebPage webPage) {
+
+         webPageMapper.updateById(webPage);
+
+
+       return  webPageMapper.selectById(webPage.getPageId());
+    }
+
+    @Override
+    public WebPage addWebpage(WebPage webPage) {
+
+         webPageMapper.insert(webPage);
+
+        return webPage;
     }
 
 

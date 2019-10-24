@@ -17,4 +17,5 @@ public interface WebDetailMapper extends BaseMapper<WebDetail> {
 
     List<WebDetail> selectAll(Integer id);
 
+
 }

@@ -22,7 +22,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.bohui.wf.website.webpage.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.bohui.wf.gps.website.webpage.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

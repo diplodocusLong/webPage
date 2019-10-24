@@ -24,10 +24,12 @@
     <sql id="Base_Column_List">
         detail_id, page_id, detail_title, detail_subtitle, detail_image1, detail_image2, detail_image3, detail_content, detail_link, detail_level, detail_status, detail_remark, create_time, update_time
     </sql>
+
     <select id="selectAll" resultType="com.bohui.wf.gps.website.webpage.entity.WebDetail">
         select <include refid="Base_Column_List"></include>
         from web_detail
         where page_id = #{id}
     </select>
+
 
 </mapper>

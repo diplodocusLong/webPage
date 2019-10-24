@@ -16,4 +16,11 @@ import java.util.List;
 public interface WebIndexService extends IService<WebIndex> {
 
     List<WebIndex> listPages();
+
+    WebIndex addpage(WebIndex webIndex);
+
+    WebIndex selectIndexById(Integer indexId);
+
+    WebIndex updateWebIndex(WebIndex webIndex);
 }
+

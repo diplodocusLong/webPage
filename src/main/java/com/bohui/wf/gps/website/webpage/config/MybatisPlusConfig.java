@@ -31,7 +31,7 @@ public class MybatisPlusConfig {
     @Bean
     @Profile({"dev","test"})// 设置 dev test 环境开启
     public PerformanceInterceptor performanceInterceptor() {
-        return new PerformanceInterceptor().setMaxTime(100).setFormat(true);
+        return new PerformanceInterceptor().setMaxTime(500).setFormat(true);
     }
 
 

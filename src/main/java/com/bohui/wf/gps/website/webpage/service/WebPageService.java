@@ -23,4 +23,9 @@ public interface WebPageService extends IService<WebPage> {
     WebPage getNavigation();
 
     List<WebPage> listPage(Integer id);
+
+    WebPage updateWebpage(WebPage webPage);
+
+    WebPage addWebpage(WebPage webPage);
+
 }

@@ -28,7 +28,9 @@ public class CrosFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
             throws IOException, ServletException {
         final HttpServletResponse response = (HttpServletResponse) res;
+
         final HttpServletRequest request = (HttpServletRequest) req;
+
         response.setHeader("Access-Control-Allow-Credentials", "true");
         if (env.getProperty("spring.profiles.active") != null
                 && env.getProperty("spring.profiles.active").equals("prod")) {

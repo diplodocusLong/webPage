@@ -15,7 +15,7 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-  mapper-locations:  classpath:/mapper/*Mapper.xml,classpath:/com/bohui/wf/gps/website.webpage/mapper/**/*Mapper.xml
+  mapper-locations:  classpath*:/mapper/*Mapper.xml,classpath*:com/**/mapper/xml/*Mapper.xml
   type-aliases-package: com.bohui.wf.gps.website.webpage.entity
 ---
 spring:

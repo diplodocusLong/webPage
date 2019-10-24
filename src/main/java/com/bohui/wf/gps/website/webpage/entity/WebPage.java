@@ -49,7 +49,7 @@ public class WebPage extends Model<WebPage> {
     private String pageRemark;
 
     @ApiModelProperty(value = "状态，1为启用")
-    @TableLogic(value = "1",delval = "0")
+//    @TableLogic(value = "1",delval = "0")
     private Integer pageStatus;
 
     @ApiModelProperty(value = "创建时间")
@@ -68,5 +68,6 @@ public class WebPage extends Model<WebPage> {
     protected Serializable pkVal() {
         return this.pageId;
     }
+
 
 }

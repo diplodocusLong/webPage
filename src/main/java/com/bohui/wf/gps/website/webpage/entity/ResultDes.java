@@ -7,7 +7,15 @@ public enum ResultDes {
 
     ERROE("2001","系统错误"),
 
-    RUNTIMEEXCEPTION("2002","运行时异常");
+    RUNTIMEEXCEPTION("2002","运行时异常"),
+
+    NULLPOINT("2003","空指针异常"),
+
+    CLASSCAST("2004","类型转化异常"),
+
+    IO("2005","IO异常"),
+
+    OUTOFBOUND("2006","数组下标越界");
 
     private String code;
 
