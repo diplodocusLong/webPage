@@ -62,5 +62,17 @@ public class WebDetailServiceImpl extends ServiceImpl<WebDetailMapper, WebDetail
         return webDetailMapper.selectById(detailId);
     }
 
+    @Override
+    public WebDetail addDetail(WebDetail webDetail) {
+
+        int insert = webDetailMapper.insert(webDetail);
+
+        if(webDetail.getDetailId()!=null){
+            return webDetail;
+        }
+
+        throw new RuntimeException("没有添加成功");
+    }
+
 
 }

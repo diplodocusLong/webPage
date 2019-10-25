@@ -2,6 +2,7 @@ package com.bohui.wf.gps.website.webpage.controller;
 
 
 import com.bohui.wf.gps.website.webpage.entity.Result;
+import com.bohui.wf.gps.website.webpage.entity.ResultDes;
 import com.bohui.wf.gps.website.webpage.entity.WebDetail;
 import com.bohui.wf.gps.website.webpage.service.WebDetailService;
 import io.swagger.annotations.Api;
@@ -58,6 +59,22 @@ public class WebDetailController {
 
         return Result.OK().setData(webDetail);
     }
+
+
+
+    @ApiOperation("给模块添加元素")
+    @ApiImplicitParam(paramType = "WebDetail")
+    @PostMapping("/manager")
+    public Result addWebDetail( @RequestBody WebDetail webDetail) {
+
+        webDetail =  webDetailService.addDetail(webDetail);
+
+
+
+        return Result.OK().setData(webDetail);
+    }
+
+
 
 
 

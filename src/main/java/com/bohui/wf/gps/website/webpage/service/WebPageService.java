@@ -18,8 +18,6 @@ public interface WebPageService extends IService<WebPage> {
 
     List<WebPage> fondPage(Integer id);
 
-    Result updateSite(Integer id);
-
     WebPage getNavigation();
 
     List<WebPage> listPage(Integer id);

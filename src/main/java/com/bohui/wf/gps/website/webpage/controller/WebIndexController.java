@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,10 +31,17 @@ public class WebIndexController {
     WebIndexService webIndexService;
 
     @ApiOperation(value="查询所有页面相关信息")
-    @GetMapping("/manager/pages")
-    public Result getPages() {
+    @GetMapping("/manager/pages/{pageName}")
+    public Result getPages(@PathVariable String pageName) {
 
-        List<WebIndex> webIndices = webIndexService.listPages();
+        List<WebIndex> webIndices;
+        if(StringUtils.isEmpty(pageName)){
+          webIndices = webIndexService.listPages();
+        }else{
+            webIndices = webIndexService.listPages(pageName);
+        }
+
+
 
         return Result.OK().setData(webIndices);
 

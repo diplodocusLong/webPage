@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,13 +36,28 @@ public class WebPageServiceImpl extends ServiceImpl<WebPageMapper, WebPage> impl
     @Override
     @Transactional(readOnly = true)
     public List<WebPage> fondPage(Integer id) {
-        List<WebPage> webPages = webPageMapper.selectList(new QueryWrapper<WebPage>().eq("index_id",id).eq("page_status",1));
 
+        List<WebPage> webPages = new ArrayList<WebPage>();
+
+        WebPage daohang = webPageMapper.selectOne(new QueryWrapper<WebPage>().eq("index_id", 0)
+                .eq("page_remark", "导航")
+        );
+
+        WebPage weiba = webPageMapper.selectOne(new QueryWrapper<WebPage>().eq("index_id", 0)
+                .eq("page_remark", "weiba")
+        );
+
+
+        List<WebPage> webPageSelf = webPageMapper.selectList(new QueryWrapper<WebPage>().eq("index_id",id).eq("page_status",1));
+
+        webPages.add(daohang);
+        webPages.addAll(webPageSelf);
+        webPages.add(weiba);
 
         for (WebPage webPage : webPages) {
 
             List<WebDetail> webDetails = webDetailMapper.selectList(
-                    new QueryWrapper<WebDetail>().eq("page_id", webPage.getPageId()).eq("page_status",1));
+                    new QueryWrapper<WebDetail>().eq("page_id", webPage.getPageId()).eq("detail_status",1));
 
             webPage.setWebDetails(webDetails);
         }
@@ -49,11 +65,7 @@ public class WebPageServiceImpl extends ServiceImpl<WebPageMapper, WebPage> impl
     }
 
 
-    @Override
-    public Result updateSite(Integer id) {
 
-        return null;
-    }
 
     @Override
     public WebPage getNavigation() {

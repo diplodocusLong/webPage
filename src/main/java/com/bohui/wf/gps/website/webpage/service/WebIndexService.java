@@ -22,5 +22,7 @@ public interface WebIndexService extends IService<WebIndex> {
     WebIndex selectIndexById(Integer indexId);
 
     WebIndex updateWebIndex(WebIndex webIndex);
+
+    List<WebIndex> listPages(String pageName);
 }
 

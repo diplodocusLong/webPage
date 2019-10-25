@@ -21,4 +21,6 @@ public interface WebDetailService extends IService<WebDetail> {
     WebDetail updateDetail(WebDetail webDetail);
 
     WebDetail selectOne(Integer detailId);
+
+    WebDetail addDetail(WebDetail webDetail);
 }

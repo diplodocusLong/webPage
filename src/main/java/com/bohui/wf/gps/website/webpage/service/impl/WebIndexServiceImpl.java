@@ -1,5 +1,6 @@
 package com.bohui.wf.gps.website.webpage.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.bohui.wf.gps.website.webpage.entity.WebDetail;
 import com.bohui.wf.gps.website.webpage.entity.WebIndex;
@@ -66,5 +67,12 @@ public class WebIndexServiceImpl extends ServiceImpl<WebIndexMapper, WebIndex> i
 
 
         return webIndexMapper.selectById(webIndex.getIndexId());
+    }
+
+    @Override
+    public List<WebIndex> listPages(String pageName) {
+        return webIndexMapper.selectList(new QueryWrapper<WebIndex>()
+                                         .eq("index_content",pageName)
+        );
     }
 }
