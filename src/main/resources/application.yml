@@ -7,9 +7,9 @@ spring:
     active: dev
   datasource:
     #driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://58.87.88.74:3306/gps_website?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/gps_website?characterEncoding=utf8&useSSL=false
     username: root
-    password: Zhuoyuew@killhacker*94@
+    password: root
 #mybatis日志
 mybatis-plus:
   configuration:
